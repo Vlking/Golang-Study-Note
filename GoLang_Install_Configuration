@@ -1,0 +1,53 @@
+1、golang是编译性语言，是唯一支持多核心计算的语言。没有其他语言花哨的写法。
+
+一、go语言安装
+windows
+1、下载安装包，全都下一步，然后完成。
+2、在系统变量里的path把安装目录复制进去。
+3、在系统变量创建GOPATH:把go的安装目录里的bin目录全部粘贴进去，然后确定
+4、打开CMD输入go version就看见go语言的版本了。
+
+Linux CentOS8
+
+1、执行解压命令
+tar -C /usr/local/ -zxvf go1.14.6.linux-amd64.tar.gz
+
+2、配置环境变量
+vim ~/.bash_profile
+export GOROOT=/usr/local/go                  //安装目录
+export GOPATH=/root/go                         //新建gopath文件夹
+export PATH=$PATH:$GOROOT/bin
+保存退出：source ~/.bash_profile
+
+3、测试：go version
+如果显示以下结果就没问题了：go version go1.14 linux/amd64
+
+4、GoLand安装：
+
+执行：tar -xzvf goland-2020.2.tar.gz -C /usr/local/
+执行：cd /usr/local/GoLand-2020.2/bin
+执行：sh ./goland.sh
+设置图标
+sudo gedit /usr/share/applications/GoLand.desktop
+
+[Desktop Entry]
+Type=Application
+Name=GoLand
+GenericName=GoLand-2020
+Comment=GoLand2020:The Go IDE
+Exec="/usr/local/GoLand-2020.2/bin/goland.sh" %f
+Icon=/usr/local/GoLand-2020.2/bin/goland.png
+Terminal=goland
+Categories=GoLand;
+
+二、平台配置
+
+set cgo_enabled=0   //禁用Cgo
+set goos=windows    //目标平台windows
+set goarch=inter    //目标处理器架构
+
+三、GoLand配置go
+
+1、先创建项目，在项目目录里创建bin文件夹：存放执行文件。src文件夹：存放go代码。pkg文件夹：存放包文件夹
+2、创建路径：在src下创建公司代码仓库域名：golang.com，然后在域名下创建：前端组、后端组、架构组，最后在后端组里创建项目，在项目里创建模块
+3、在settings里的GOPATH里设置自己的项目目录，Global GOPATH,Project GOPATH
