@@ -1,0 +1,35 @@
+变量：先声明在使用,变量名后面必须加上类型
+//Go语言中变量声明必须使用，不用就编译不下去
+例：
+package main
+
+import "fmt"
+
+//单独声明变量
+var s1 string
+var s2 int
+var s3 bool
+var s4 float32
+
+//批量声明变量
+var (
+	a_a string
+	//小驼峰式标准命名
+	userName int
+	//大驼峰式标准命名
+	PassWord bool
+	dd float32
+)
+
+func main() {
+	a_a = "你好"
+	userName = 16
+	PassWord = true
+	//正常打印
+	fmt.Print(a_a)
+	//打印有换行符
+	fmt.Println()
+	//%s:占位符，使用aa这个变量的值去替换占位符,\n是换行的意思
+	fmt.Printf("a_a:%s\n", a_a)
+	fmt.Println(userName)
+}
