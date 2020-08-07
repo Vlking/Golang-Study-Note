@@ -32,7 +32,7 @@ sudo gedit /usr/share/applications/GoLand.desktop
 
 [Desktop Entry]
 Type=Application
-Name=GoLand
+Name=GoLand 
 GenericName=GoLand-2020
 Comment=GoLand2020:The Go IDE
 Exec="/usr/local/GoLand-2020.2/bin/goland.sh" %f
