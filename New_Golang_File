@@ -1,1 +1,35 @@
 1、创建文件必须导入main包
+例：
+package main
+
+import "fmt"
+
+func main(){
+	fmt.Print("Hello")
+}
+
+-------------------------------------------
+编译：
+使用go build
+1、在项目目录下执行go build
+2、在其他路径下执行go build，需要在后面加上项目的路径（项目路径从GOPATH/src后开始写起，编译之后的可执行文件就保存在当前目录下）
+3、编译的时候重命名：go build -o aa.exe
+
+交叉编译:
+SET CGO_ENABLED=0 //禁用CGO
+SET GOOS=linux    //目标平台是linux
+SET GOARCH=amd64  //目标处理器架构是amd64
+
+Mac下编辑Linux和windows平台64位可执行程序：
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
+
+Linux 下编译 Mac 和 Windows 平台64位可执行程序：.
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
+
+Windows下编译Mac平台64位可执行程序：
+SET CGO_ENABLED=0
+SET GOOS=darwin
+SET GOARCH=amd64
+go build
